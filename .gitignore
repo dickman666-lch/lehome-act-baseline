@@ -71,3 +71,22 @@ tests/
 
 # Docker history
 .isaac-lab-docker-history
+
+# Local environments and generated files
+.venv/
+__pycache__/
+.DS_Store
+.cache/
+.env
+.env.*
+!.env.example
+
+# Large resources; keep repository placeholder files
+/Assets/**
+!/Assets/.gitignore
+/Datasets/**
+!/Datasets/.gitignore
+/third_party/IsaacLab/
+/outputs/
+/runs/
+/logs/
