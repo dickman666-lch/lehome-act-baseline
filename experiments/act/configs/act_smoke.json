@@ -1,0 +1,47 @@
+{
+  "dataset": {
+    "repo_id": "lehome_local_top_short",
+    "root": "/root/autodl-tmp/lehome-work/repo/Datasets/example/top_short_merged"
+  },
+  "policy": {
+    "type": "act",
+    "device": "cuda",
+    "push_to_hub": false,
+    "chunk_size": 100,
+    "n_action_steps": 100,
+    "input_features": {
+      "observation.state": {
+        "type": "STATE",
+        "shape": [12]
+      },
+      "observation.images.top_rgb": {
+        "type": "VISUAL",
+        "shape": [3, 480, 640]
+      },
+      "observation.images.left_rgb": {
+        "type": "VISUAL",
+        "shape": [3, 480, 640]
+      },
+      "observation.images.right_rgb": {
+        "type": "VISUAL",
+        "shape": [3, 480, 640]
+      }
+    },
+    "output_features": {
+      "action": {
+        "type": "ACTION",
+        "shape": [12]
+      }
+    }
+  },
+  "output_dir": "/root/autodl-tmp/lehome-work/runs/act_top_short_smoke_01",
+  "batch_size": 4,
+  "steps": 200,
+  "save_freq": 200,
+  "log_freq": 20,
+  "num_workers": 4,
+  "seed": 42,
+  "wandb": {
+    "enable": false
+  }
+}
